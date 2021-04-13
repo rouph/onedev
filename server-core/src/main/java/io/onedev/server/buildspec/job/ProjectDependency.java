@@ -12,7 +12,6 @@ import org.hibernate.validator.constraints.NotEmpty;
 import edu.emory.mathcs.backport.java.util.Collections;
 import io.onedev.commons.codeassist.InputSuggestion;
 import io.onedev.server.OneDev;
-import io.onedev.server.buildspec.BuildSpec;
 import io.onedev.server.entitymanager.BuildManager;
 import io.onedev.server.entitymanager.ProjectManager;
 import io.onedev.server.model.Build;
@@ -115,7 +114,7 @@ public class ProjectDependency implements Serializable {
 	
 	@SuppressWarnings("unused")
 	private static List<InputSuggestion> suggestVariables(String matchWith) {
-		return BuildSpec.suggestVariables(matchWith);
+		return Job.suggestVariables(matchWith);
 	}
 	
 	@SuppressWarnings("unused")

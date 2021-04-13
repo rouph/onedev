@@ -200,11 +200,15 @@ public abstract class BasePage extends WebPage {
 		handler.prependJavaScript(script);
 	}
 
-	public void replaceState(IPartialPageRequestHandler handler, String url, Serializable data) {
+	public void replaceState(IPartialPageRequestHandler handler, String url, Serializable data, @Nullable String title) {
 		String encodedData = new String(Base64.encodeBase64(CipherUtils.encrypt(SerializationUtils.serialize(data))));
 		String script = String.format("onedev.server.history.replaceState('%s', '%s', '%s');", 
-				url, encodedData, JavaScriptEscape.escapeJavaScript(getPageTitle()));
+				url, encodedData, JavaScriptEscape.escapeJavaScript(title));
 		handler.prependJavaScript(script);
+	}
+	
+	public void replaceState(IPartialPageRequestHandler handler, String url, Serializable data) {
+		replaceState(handler, url, null);
 	}
 	
 	protected void onPopState(AjaxRequestTarget target, Serializable data) {

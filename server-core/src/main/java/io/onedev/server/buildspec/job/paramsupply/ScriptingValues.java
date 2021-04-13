@@ -58,9 +58,9 @@ public class ScriptingValues implements ValuesProvider {
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<List<String>> getValues(Build build, String paramName) {
+	public List<List<String>> getValues() {
 		Map<String, Object> variables = new HashMap<>();
-		variables.put("build", build);
+		variables.put("build", Build.get());
 		List<List<String>> values = new ArrayList<>();
 		Object result = GroovyUtils.evalScriptByName(scriptName, variables);
 		if (result instanceof List) {

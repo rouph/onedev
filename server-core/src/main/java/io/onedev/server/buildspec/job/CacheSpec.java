@@ -6,7 +6,6 @@ import java.util.List;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import io.onedev.commons.codeassist.InputSuggestion;
-import io.onedev.server.buildspec.BuildSpec;
 import io.onedev.server.util.validation.annotation.Path;
 import io.onedev.server.util.validation.annotation.RegEx;
 import io.onedev.server.web.editable.annotation.Editable;
@@ -48,7 +47,7 @@ public class CacheSpec implements Serializable {
 	
 	@SuppressWarnings("unused")
 	private static List<InputSuggestion> suggestVariables(String matchWith) {
-		return BuildSpec.suggestVariables(matchWith);
+		return Job.suggestVariables(matchWith);
 	}
 
 }

@@ -83,7 +83,7 @@ public class JobDependency implements Serializable {
 
 	@SuppressWarnings("unused")
 	private static List<InputSuggestion> suggestVariables(String matchWith) {
-		return BuildSpec.suggestVariables(matchWith);
+		return Job.suggestVariables(matchWith);
 	}
 	
 	@SuppressWarnings("unused")

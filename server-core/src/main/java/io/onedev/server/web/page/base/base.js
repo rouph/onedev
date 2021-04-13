@@ -90,9 +90,6 @@ onedev.server = {
 			}
 			$form.submit(function() {
 				$form.removeClass("dirty");				
-				setTimeout(function() {
-					$form.removeClass("dirty");				
-				}, 0);
 			});
 		},
 		dirtyChanged: function($form) {

@@ -100,7 +100,7 @@ public class NoCommitsPanel extends Panel {
 
 										@Override
 										public void onCommitted(AjaxRequestTarget target, RefUpdated refUpdated) {
-											context.onCommitted(target, refUpdated);
+											context.onCommitted(target, refUpdated, null);
 											modal.close();
 										}
 										
